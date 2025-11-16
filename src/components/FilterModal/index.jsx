@@ -1,23 +1,11 @@
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useSelectedStore } from "../../stores/selectedState";
+import { totalImages } from "../../hooks/useGetImages";
 import ColorCircle from "../ColorCircle";
 import FilterDetail from "../FilterDetail";
 import styles from "./FilterModal.module.scss";
-import { totalImages } from "../../hooks/useGetImages";
-
-function parseSearchParamsToJson(searchParams) {
-  const obj = {};
-  for (const [key, value] of searchParams.entries()) {
-    obj[key] = value;
-  }
-  return obj;
-}
-
-const trimArray = (array) => {
-  return array.map((item) => item.trim());
-};
+import { trimArray, parseSearchParamsToJson } from "../../utils";
 
 const getOptions = (images, year) => {
   return images.reduce(
