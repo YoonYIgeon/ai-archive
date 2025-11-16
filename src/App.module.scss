@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+}
+
+.line {
+  border-bottom: 1px solid #777777;
+}
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+.sidebar {
+  width: 420px;
+  flex-shrink: 0;
+  border-left: 1px solid #777777;
+  position: relative;
+  height: calc(100vh - 40px);
+  overflow: auto;
+}
+.contents {
+  padding-top: 86px;
+  padding-left: 10px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 26px;
+}
+.filterButton {
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff;
+}

@@ -1,0 +1,171 @@
+.container {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background: #000;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 999;
+  height: 100%;
+  &.open {
+    animation: slideUp 0.5s ease-in-out forwards;
+  }
+  &.close {
+    animation: slideDown 0.5s ease-in-out forwards;
+  }
+}
+.colorCircle {
+  width: 80px;
+}
+.backButton {
+  width: 20px;
+  height: 60px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+.archiveList {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #777777;
+  button {
+    font-size: 24px;
+    font-weight: 200;
+    color: #a9a9a9;
+    &.selected {
+      color: #fff;
+    }
+  }
+}
+.optionContainer {
+  height: calc(100vh - 150px);
+  overflow: auto;
+  width: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+.optionTitle {
+  margin: 20px 0 40px;
+  font-size: 24px;
+  font-weight: 200;
+}
+.yearTitle {
+  margin: 20px 0;
+  font-size: 24px;
+  font-weight: 200;
+  color: #a9a9a9;
+}
+.dataContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+.year {
+  font-size: 24px;
+  font-weight: 400;
+}
+.dataList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  li {
+    width: 190px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.name {
+  font-size: 16px;
+  font-weight: 200;
+  color: #a9a9a9;
+  border: 1px solid #a9a9a9;
+  display: inline-block;
+  padding: 5px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 19px;
+  height: 29px;
+  color: #fff;
+}
+.valueContainer {
+  text-align: center;
+  width: 57px;
+}
+.value {
+  font-size: 16px;
+  font-weight: 700;
+}
+.percent {
+  font-size: 10px;
+  font-weight: 400;
+}
+.yearList {
+  display: flex;
+  margin-left: 120px;
+  gap: 40px;
+  li {
+    width: 57px;
+  }
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+.tableItem {
+  display: flex;
+  align-items: center;
+}
+.valueList {
+  display: flex;
+  gap: 40px;
+  margin-left: 50px;
+}
+.imageContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  color: #a9a9a9;
+  font-family: "Inter", sans-serif;
+  width: 80px;
+  font-size: 12px;
+}
+.image {
+  width: 48px;
+  height: 48px;
+}
+.tableContainer {
+  display: flex;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+.none p {
+  color: #a9a9a9;
+  font-weight: 400;
+}

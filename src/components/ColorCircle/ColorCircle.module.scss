@@ -1,0 +1,36 @@
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  &.lg {
+    width: 80px;
+    height: 80px;
+  }
+  &.sm {
+    width: 20px;
+    height: 20px;
+  }
+}
+.red {
+  background: #ff0000;
+}
+.orange {
+  background: #ff6200;
+}
+.yellow {
+  background: #ffee00;
+}
+.green {
+  background: #008000;
+}
+.blue {
+  background: #0000ff;
+}
+.purple {
+  background: #800080;
+}
+.monochrome {
+  background: linear-gradient(180deg, #ffffff 0%, #000000 100%);
+}

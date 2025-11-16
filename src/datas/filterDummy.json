@@ -1,0 +1,898 @@
+{
+  "shape": {
+    "2025": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      },
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      },
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      }
+    ],
+    "2024": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      }
+    ],
+    "2023": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      }
+    ],
+    "2022": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      }
+    ],
+    "2021": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      }
+    ]
+  },
+  "mood": {
+    "2025": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      },
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      },
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      }
+    ],
+    "2024": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      }
+    ],
+    "2023": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 32
+      },
+      {
+        "name": "tag1",
+        "value": 31
+      },
+      {
+        "name": "taaaag2",
+        "value": 18
+      },
+      {
+        "name": "taaaaaaaaaaaaagggg3",
+        "value": 17
+      }
+    ],
+    "2022": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      }
+    ],
+    "2021": [
+      {
+        "name": "tag1",
+        "value": 62
+      },
+      {
+        "name": "taaaag2",
+        "value": 52
+      }
+    ]
+  },
+  "color": [
+    {
+      "name": "red",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "orange",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "yellow",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "green",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "blue",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "purple",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "grayscales",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    }
+  ],
+  "form": [
+    {
+      "name": "2D",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "photo",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "3D",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    }
+  ],
+  "emphasis": [
+    {
+      "name": "center",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "top",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "bottom",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "left",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "right",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    }
+  ],
+  "balance": [
+    {
+      "name": "Symmetrical",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "Asymmetrical",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "Radial",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "name": "high",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "medium",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "low",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    }
+  ],
+  "whitespace": [
+    {
+      "name": "high",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "medium",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    },
+    {
+      "name": "low",
+      "list": [
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        },
+        {
+          "value": 299,
+          "percent": 62
+        }
+      ]
+    }
+  ]
+}

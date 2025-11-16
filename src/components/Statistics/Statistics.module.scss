@@ -1,0 +1,19 @@
+.container {
+  padding-right: 10px;
+  height: 100%;
+  overflow: auto;
+}
+.item {
+  border-bottom: 1px solid #777777;
+  padding: 40px 40px;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}

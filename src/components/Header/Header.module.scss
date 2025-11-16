@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #777777;
+  width: 100%;
+  background: #000;
+}
+.title {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 19px;
+  margin-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.border {
+  border-left: 1px solid #777777;
+}
+
+.aboutButton {
+  flex-shrink: 0;
+  width: 421px;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: right;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+}

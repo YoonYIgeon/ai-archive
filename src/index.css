@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Bricolage Grotesque", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background: #000;
+  * {
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Bricolage Grotesque", system-ui, Avenir, Helvetica, Arial;
+  }
+  ::-webkit-scrollbar {
+    background: #000;
+    width: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #777777;
+    border-radius: 3px;
+    border: 3px solid #000;
+  }
+}
+
+a {
+  text-decoration: inherit;
+}
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: "Bricolage Grotesque", system-ui, Avenir, Helvetica, Arial;
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+p {
+  padding: 0;
+  margin: 0;
+}

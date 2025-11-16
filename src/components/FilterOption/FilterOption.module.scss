@@ -1,0 +1,23 @@
+.filterOptions {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filterYear {
+  font-size: 32px;
+  font-weight: 200;
+  color: #fff;
+}
+.filterIcon {
+  width: 40px;
+}
+.filterValue {
+  border: 1px solid #ffff;
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff;
+  padding: 5px;
+  box-sizing: border-box;
+  line-height: 29px;
+}

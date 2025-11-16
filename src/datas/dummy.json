@@ -1,0 +1,311 @@
+{
+  "archiveList": [
+    {
+      "name": "Archive1",
+      "id": 1
+    },
+    {
+      "name": "Archive2",
+      "id": 2
+    },
+    {
+      "name": "Archive3",
+      "id": 3
+    },
+    {
+      "name": "Archive4",
+      "id": 4
+    }
+  ],
+  "contents": [
+    {
+      "shapes": [
+        {
+          "name": "Shape1",
+          "id": 1
+        },
+        {
+          "name": "Shape2",
+          "id": 2
+        },
+        {
+          "name": "Shape3",
+          "id": 3
+        }
+      ],
+      "moods": [
+        {
+          "name": "Mood1",
+          "id": 4
+        },
+        {
+          "name": "Mood2",
+          "id": 5
+        },
+        {
+          "name": "Mood3",
+          "id": 6
+        }
+      ],
+      "datas": [
+        {
+          "statistics": {
+            "year": [
+              {
+                "2024": 86
+              },
+              {
+                "2023": 62
+              },
+              {
+                "2022": 75
+              },
+              {
+                "2020": 38
+              },
+              {
+                "2019": 23
+              }
+            ],
+            "color": [
+              {
+                "red": 10
+              },
+              {
+                "orange": 3
+              },
+              {
+                "yellow": 4
+              },
+              {
+                "green": 2
+              },
+              {
+                "blue": 5
+              },
+              {
+                "purple": 1
+              },
+              {
+                "grayscales": 1
+              }
+            ],
+            "form": [
+              {
+                "2D": 63
+              },
+              {
+                "3D": 21
+              },
+              {
+                "photo": 18
+              }
+            ],
+            "emphasis": [
+              {
+                "center": 35
+              },
+              {
+                "top": 35
+              },
+              {
+                "bottom": 35
+              },
+              {
+                "left": 35
+              },
+              {
+                "right": 35
+              }
+            ],
+            "balance": [
+              {
+                "Symmetrical": 72
+              },
+              {
+                "Asymmetrical": 72
+              },
+              {
+                "Radial": 72
+              }
+            ],
+            "contrast": [
+              {
+                "high": 72
+              },
+              {
+                "medium": 20
+              },
+              {
+                "low": 8
+              }
+            ],
+            "whiteSpace": [
+              {
+                "high": 72
+              },
+              {
+                "medium": 20
+              },
+              {
+                "low": 8
+              }
+            ]
+          },
+          "list": [
+            {
+              "id": 1,
+              "name": "Shape1",
+              "image": "https://placehold.co/600x400",
+              "year": 2025,
+              "color": ["red", "blue", "green"],
+              "form": "photo",
+              "emphasis": "top",
+              "balance": "Asymmetrical",
+              "contrast": "high",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 2,
+              "name": "Shape2",
+              "image": "https://placehold.co/600x400",
+              "year": 2025,
+              "color": ["red", "grayscales", "green"],
+              "form": "2D",
+              "emphasis": "bottom",
+              "balance": "Radial",
+              "contrast": "low",
+              "whitespace": "medium",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 3,
+              "name": "Shape3",
+              "image": "https://placehold.co/600x400",
+              "year": 2023,
+              "color": ["orange", "grayscales"],
+              "form": "3D",
+              "emphasis": "left",
+              "balance": "Symmetrical",
+              "contrast": "medium",
+              "whitespace": "low",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 4,
+              "name": "Mood1",
+              "image": "https://placehold.co/600x400",
+              "year": 2022,
+              "color": ["yellow", "grayscales"],
+              "form": "2D",
+              "emphasis": "right",
+              "balance": "Symmetrical",
+              "contrast": "low",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 5,
+              "name": "Mood2",
+              "image": "https://placehold.co/600x400",
+              "year": 2021,
+              "color": ["purple", "grayscales"],
+              "form": "2D",
+              "emphasis": "center",
+              "balance": "Symmetrical",
+              "contrast": "medium",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 6,
+              "name": "Mood3",
+              "image": "https://placehold.co/600x400",
+              "year": 2025,
+              "color": ["red", "blue", "green"],
+              "form": "2D",
+              "emphasis": "center",
+              "balance": "Symmetrical",
+              "contrast": "low",
+              "whitespace": "medium",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 7,
+              "name": "Mood4",
+              "image": "https://placehold.co/600x400",
+              "year": 2020,
+              "color": ["red", "blue", "green"],
+              "form": "2D",
+              "emphasis": "center",
+              "balance": "Symmetrical",
+              "contrast": "low",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 8,
+              "name": "Mood5",
+              "image": "https://placehold.co/600x400",
+              "year": 2020,
+              "color": ["red", "blue", "green"],
+              "form": "2D",
+              "emphasis": "center",
+              "balance": "Symmetrical",
+              "contrast": "low",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 9,
+              "name": "Mood6",
+              "image": "https://placehold.co/600x400",
+              "year": 2020,
+              "color": ["red", "blue", "green"],
+              "form": "2D",
+              "emphasis": "center",
+              "balance": "Symmetrical",
+              "contrast": "low",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            },
+            {
+              "id": 10,
+              "name": "Mood7",
+              "image": "https://placehold.co/600x400",
+              "year": 2020,
+              "color": ["red", "blue", "green"],
+              "form": "2D",
+              "emphasis": "center",
+              "balance": "Symmetrical",
+              "contrast": "low",
+              "whitespace": "high",
+              "overview": "Promotional poster for the Wonhae Hwang – Solo Exhibition titled 'Hydra Square.' The exhibition ran from 2024.7.4-7.21 and explores the mixed and ambiguous senses of urban Non-Places. The artist, Wonhae Hwang, uses opposing images like the 'Hydra' and 'Square' to capture fragmented movement.",
+              "colorAndComposition": "Palette: Primarily Monochrome (Black graphics and text on a White background). Contrast: Extreme High Contrast is the foundation, creating visual vibration. EMOTION: Stark, Cold, and Rigorous, emphasizing structure and intellectual difficulty. Principles: Balance is symmetrical in its centralized weight but asymmetrical in its internal detail. Alignment is intentionally broken/mixed in the central type block. Negative Space is substantial in the margins, isolating and emphasizing the dense, visual knot. Composition: Hyper-Dense Layering (Maximalist density).",
+              "imagery": "Source: Type-as-Image; the visual content is constructed solely from layered, manipulated typefaces. Obvious Shapes: A dense mixture of modular pixel blocks and curvilinear script outlines forms, all tangled to create the central mass. Mood: Aggressive, Experimental, and Intellectually Complex. It evokes System Failure and Information Overload. Texture/Effects: Dominated by the Digital Decay or Glitch aesthetic. Textures include square pixelation and digital noise, giving a rough, static-like appearance."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
