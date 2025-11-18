@@ -1,17 +1,16 @@
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useMemo, useRef } from "react";
-import { totalImages } from "../../hooks/useGetImages";
+import { useRef } from "react";
+import useGetImages from "../../hooks/useGetImages";
 import styles from "./ImageList.module.scss";
-import { useSearchParams } from "react-router-dom";
 
 export default function ImageList({ onSelect }) {
   const parentRef = useRef(null);
-  const [searchParams] = useSearchParams();
   // 이미지 필터링은 오직 여기서만 한다.
+  const images = useGetImages();
 
   // 한 줄에 3개씩 배치하므로 행의 개수 계산
   const itemsPerRow = 3;
-  const rowCount = Math.ceil(totalImages.length / itemsPerRow);
+  const rowCount = Math.ceil(images.length / itemsPerRow);
 
   const virtualizedList = useVirtualizer({
     count: rowCount,
@@ -21,16 +20,10 @@ export default function ImageList({ onSelect }) {
     overscan: 3,
   });
 
-  const filteredImages = useMemo(() => {
-    return totalImages.filter((image) => {
-      image;
-      // return image.year === filterOptions.year;
-    });
-  }, [totalImages]);
-
   return (
     <div className="h-10 flex-grow-1" ref={parentRef}>
-      {totalImages.length === 0 ? (
+      총 {images.length}개
+      {images.length === 0 ? (
         <div className={styles.empty}>
           <p>목록이 없습니다.</p>
         </div>
@@ -45,11 +38,8 @@ export default function ImageList({ onSelect }) {
         >
           {virtualizedList.getVirtualItems().map((virtualRow) => {
             const startIndex = virtualRow.index * itemsPerRow;
-            const endIndex = Math.min(
-              startIndex + itemsPerRow,
-              totalImages.length
-            );
-            const rowItems = totalImages.slice(startIndex, endIndex);
+            const endIndex = Math.min(startIndex + itemsPerRow, images.length);
+            const rowItems = images.slice(startIndex, endIndex);
 
             return (
               <div

@@ -1,12 +1,12 @@
-import styles from "./Statistics.module.scss";
-import YearItem from "./YearItem/YearItem";
+import { useSearchParams } from "react-router-dom";
+import useGetImages from "../../hooks/useGetImages";
+import { parseSearchParamsToJson, trimArray } from "../../utils";
 import ColorItem from "./ColorItem/ColorItem";
 import RowItem from "./RowItem/RowItem";
-import { parseSearchParamsToJson, trimArray } from "../../utils";
-import { useSearchParams } from "react-router-dom";
-import { totalImages } from "../../hooks/useGetImages";
+import styles from "./Statistics.module.scss";
+import YearItem from "./YearItem/YearItem";
 
-const getStatistics = (images, params) => {
+const getStatistics = (images) => {
   return images.reduce(
     (obj, item) => {
       // 옵션에 있는 값들을 일단 꺼낸다.
@@ -22,67 +22,29 @@ const getStatistics = (images, params) => {
 
       // 객체로 만들었다가 key값으로 가져오는 방식으로 해서 unique한 값들을 가져오고, statistics도 가져온다.
 
-      if (
-        year &&
-        (!params.year || params.year === "ALL" || params.year === year)
-      ) {
-        obj.years[year] = (obj.years[year] || 0) + 1;
-      }
+      obj.years[year] = (obj.years[year] || 0) + 1;
 
-      if (
-        (params.shapes?.split(",")?.some((shape) => shapes.includes(shape)) ||
-          !params.shapes) &&
-        shapes.length > 0
-      ) {
-        shapes.forEach((shape) => {
-          obj.shapes[shape] = (obj.shapes[shape] || 0) + 1;
-        });
-      }
+      shapes.forEach((shape) => {
+        obj.shapes[shape] = (obj.shapes[shape] || 0) + 1;
+      });
 
-      if (
-        (params.moods?.split(",")?.some((mood) => moods.includes(mood)) ||
-          !params.moods) &&
-        moods &&
-        moods.length > 0
-      ) {
-        moods.forEach((mood) => {
-          obj.moods[mood] = (obj.moods[mood] || 0) + 1;
-        });
-      }
+      moods.forEach((mood) => {
+        obj.moods[mood] = (obj.moods[mood] || 0) + 1;
+      });
 
-      if (
-        (params.colors?.split(",")?.some((color) => colors.includes(color)) ||
-          !params.colors) &&
-        colors &&
-        colors.length > 0
-      ) {
-        colors.forEach((color) => {
-          obj.colors[color] = (obj.colors[color] || 0) + 1;
-        });
-      }
+      colors.forEach((color) => {
+        obj.colors[color] = (obj.colors[color] || 0) + 1;
+      });
 
-      if (form && (!params.form || params.form === form)) {
-        obj.forms[form] = (obj.forms[form] || 0) + 1;
-      }
+      obj.forms[form] = (obj.forms[form] || 0) + 1;
 
-      if (emphasis && (!params.emphasis || params.emphasis === emphasis)) {
-        obj.emphases[emphasis] = (obj.emphases[emphasis] || 0) + 1;
-      }
+      obj.emphases[emphasis] = (obj.emphases[emphasis] || 0) + 1;
 
-      if (balance && (!params.balance || params.balance === balance)) {
-        obj.balances[balance] = (obj.balances[balance] || 0) + 1;
-      }
+      obj.balances[balance] = (obj.balances[balance] || 0) + 1;
 
-      if (contrast && (!params.contrast || params.contrast === contrast)) {
-        obj.contrasts[contrast] = (obj.contrasts[contrast] || 0) + 1;
-      }
+      obj.contrasts[contrast] = (obj.contrasts[contrast] || 0) + 1;
 
-      if (
-        whitespace &&
-        (!params.whitespace || params.whitespace === whitespace)
-      ) {
-        obj.whitespaces[whitespace] = (obj.whitespaces[whitespace] || 0) + 1;
-      }
+      obj.whitespaces[whitespace] = (obj.whitespaces[whitespace] || 0) + 1;
 
       return obj;
     },
@@ -103,8 +65,9 @@ const getStatistics = (images, params) => {
 export default function Statistics() {
   const [searchParams, setSearchParams] = useSearchParams();
   const params = parseSearchParamsToJson(searchParams);
+  const images = useGetImages();
 
-  const statistics = getStatistics(totalImages, params);
+  const statistics = getStatistics(images, params);
 
   return (
     <ul className={styles.container}>

@@ -12,18 +12,19 @@ export default function FilterOption() {
     return value.split(",").map((v) => ({ key, value: v.trim() }));
   });
 
-  console.log(options);
-
   return (
     <div className="flex items-center gap-2">
       <span className="text-[24px] text-white">{params?.year}</span>
       {options.map((option) => {
+        if (option.key === "year") return null;
         if (option.key === "colors")
-          return <ColorCircle size="md" color={option.value} />;
+          return (
+            <ColorCircle key={option.value} size="md" color={option.value} />
+          );
         if (["shapes", "moods"].includes(option.key))
           return (
             <span
-              key={option.key}
+              key={option.value}
               className="text-white border border-white px-2 py-1"
             >
               {option.value}
@@ -31,6 +32,7 @@ export default function FilterOption() {
           );
         return (
           <img
+            key={option.value}
             src={REFACT_ICONS[option.key || ""]?.[option.value || ""]}
             alt={String(option.value).toLowerCase()}
             className={styles.filterIcon}
