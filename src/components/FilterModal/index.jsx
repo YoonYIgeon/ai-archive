@@ -22,7 +22,8 @@ const getOptions = (images, year) => {
 
       // 객체로 만들었다가 key값으로 가져오는 방식으로 해서 unique한 값들을 가져오고, statistics도 가져온다.
 
-      if (year !== "ALL" && item.year !== year) {
+      if (year && item.year !== year) {
+        // 패스하는 조건
         return obj;
       }
 
@@ -137,6 +138,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const params = parseSearchParamsToJson(searchParams);
+  const { year = "ALL" } = params;
 
   const options = getOptions(totalImages, params.year);
 
@@ -158,10 +160,6 @@ export default function FilterModal({ open, onClose, statistics, years }) {
 
   const handleClose = () => {
     onClose();
-  };
-
-  const handleYearSelect = (_, value) => {
-    setSearchParams({ year: value });
   };
 
   const handleSelect = ({ key, multiple }, keyword) => {
@@ -190,6 +188,13 @@ export default function FilterModal({ open, onClose, statistics, years }) {
     });
   };
 
+  const handleYearSelect = (value) => {
+    handleSelect(
+      { key: "year", multiple: false },
+      value === "ALL" ? undefined : value
+    );
+  };
+
   return (
     <>
       <div
@@ -204,12 +209,23 @@ export default function FilterModal({ open, onClose, statistics, years }) {
         </button>
         <div className={"flex flex-col gap-5 py-2.5"}>
           <Title label="Year" onSeeAll={() => handleSeeAll("year")} />
-          <List
-            list={yearList}
-            onSelect={handleYearSelect}
-            type="year"
-            selected={params.year}
-          />
+          <ul className={styles.list}>
+            {yearList.map(({ keyword, value }) => (
+              <li
+                key={keyword}
+                className={clsx(
+                  styles.option,
+                  params.year === keyword || (!params.year && keyword === "ALL")
+                    ? "text-white border-white"
+                    : "opacity-50"
+                )}
+              >
+                <button onClick={() => handleYearSelect(value)}>
+                  {keyword}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className={styles.divider} />
@@ -221,23 +237,33 @@ export default function FilterModal({ open, onClose, statistics, years }) {
               label={item.name}
               onSeeAll={() => handleSeeAll(item.key)}
             />
-            <ul className={styles.list}>
+            <ul
+              className={item.key === "colors" ? styles.colorList : styles.list}
+            >
               {Object.keys(options[item.key] || {})
                 .sort()
                 .slice(0, 10)
                 .map((keyword) => (
                   <li
                     key={keyword}
-                    className={clsx(
-                      styles.option,
-                      params[item.key]?.split(",")?.includes(keyword)
-                        ? "text-white border-white"
-                        : "opacity-50"
-                    )}
+                    className={
+                      item.key === "colors"
+                        ? styles.colorOption
+                        : clsx(
+                            styles.option,
+                            params[item.key]?.split(",")?.includes(keyword)
+                              ? "text-white border-white"
+                              : "opacity-50"
+                          )
+                    }
                   >
-                    <button onClick={() => handleSelect(item, keyword)}>
-                      {keyword}
-                    </button>
+                    {item.key === "colors" ? (
+                      <ColorCircle color={keyword} />
+                    ) : (
+                      <button onClick={() => handleSelect(item, keyword)}>
+                        {keyword}
+                      </button>
+                    )}
                   </li>
                 ))}
             </ul>
@@ -257,48 +283,12 @@ const Title = ({ label, count, onSeeAll }) => {
   return (
     <div className={styles.title}>
       {label}
-      <span className="ml-2">({count})</span>
+      {count > 0 && <span className="ml-2">({count})</span>}
       {count > 10 && (
         <button className={styles.seeAllButton} onClick={() => onSeeAll(label)}>
           See All
         </button>
       )}
     </div>
-  );
-};
-
-const ColorList = ({ list, onSelect }) => {
-  return (
-    <ul className={styles.colorList}>
-      {list.map((item) => (
-        <li
-          key={item.color}
-          className={clsx(styles.colorOption)}
-          onClick={() => onSelect("color", item.color)}
-        >
-          <ColorCircle color={item.color} />
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const List = ({ list, type, onSelect, selected }) => {
-  return (
-    <ul className={styles.list}>
-      {list.map((item) => (
-        <li
-          key={item.keyword}
-          className={clsx(
-            styles.option,
-            selected === item.keyword ? styles.selected : ""
-          )}
-        >
-          <button onClick={() => onSelect(type, item.keyword)}>
-            {item.keyword}
-          </button>
-        </li>
-      ))}
-    </ul>
   );
 };

@@ -7,7 +7,7 @@ export default function FilterOption() {
   const { filterOptions } = useFilterStore();
 
   return (
-    <div className={styles.filterOptions}>
+    <div className="flex items-center gap-2">
       <span className={styles.filterYear}>{filterOptions?.year}</span>
 
       {filterOptions?.type &&

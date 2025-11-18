@@ -48,13 +48,11 @@ function App() {
       <Header hasBorder />
       <div className="flex items-stretch">
         <div className={"flex flex-col flex-1 flex-grow-1"}>
-          <div className={styles.contents}>
-            <div className={styles.row}>
-              {mode === "modal" ? <FilterOption /> : <SubTab />}
-              <FilterButton />
-            </div>
-            <ImageList onSelect={handleSelectImage} />
+          <div className="flex justify-between items-center py-3 px-4">
+            <FilterOption />
+            <FilterButton />
           </div>
+          <ImageList onSelect={handleSelectImage} />
         </div>
         <div className={styles.sidebar}>
           <Statistics statistics={statistics} />

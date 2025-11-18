@@ -20,7 +20,7 @@ export default function ImageList({ onSelect }) {
   });
 
   return (
-    <div className={styles.container} ref={parentRef}>
+    <div className="h-10 flex-grow-1" ref={parentRef}>
       {totalImages.length === 0 ? (
         <div className={styles.empty}>
           <p>목록이 없습니다.</p>
