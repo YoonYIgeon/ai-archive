@@ -21,7 +21,6 @@ const getOptions = (images, year) => {
       const whitespace = item["White space"].trim(); // 문자열
 
       // 객체로 만들었다가 key값으로 가져오는 방식으로 해서 unique한 값들을 가져오고, statistics도 가져온다.
-
       if (year && item.year !== year) {
         // 패스하는 조건
         return obj;
@@ -138,7 +137,6 @@ export default function FilterModal({ open, onClose, statistics, years }) {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const params = parseSearchParamsToJson(searchParams);
-  const { year = "ALL" } = params;
 
   const options = getOptions(totalImages, params.year);
 
@@ -162,7 +160,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
     onClose();
   };
 
-  const handleSelect = ({ key, multiple }, keyword) => {
+  const handleSelect = ({ key, multiple }, keyword, override = false) => {
     setSearchParams((prev) => {
       const origin = parseSearchParamsToJson(prev);
       const value = multiple
@@ -179,6 +177,10 @@ export default function FilterModal({ open, onClose, statistics, years }) {
         origin[key] = value === keyword ? "" : keyword;
       }
 
+      if (override) {
+        return keyword ? { [key]: keyword } : {};
+      }
+
       return Object.entries(origin).reduce((acc, [key, value]) => {
         if (value) {
           acc[key] = value;
@@ -191,7 +193,8 @@ export default function FilterModal({ open, onClose, statistics, years }) {
   const handleYearSelect = (value) => {
     handleSelect(
       { key: "year", multiple: false },
-      value === "ALL" ? undefined : value
+      value === "ALL" ? undefined : value,
+      true
     );
   };
 

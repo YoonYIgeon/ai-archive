@@ -1,10 +1,12 @@
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { totalImages } from "../../hooks/useGetImages";
 import styles from "./ImageList.module.scss";
+import { useSearchParams } from "react-router-dom";
 
 export default function ImageList({ onSelect }) {
   const parentRef = useRef(null);
+  const [searchParams] = useSearchParams();
   // 이미지 필터링은 오직 여기서만 한다.
 
   // 한 줄에 3개씩 배치하므로 행의 개수 계산
@@ -18,6 +20,13 @@ export default function ImageList({ onSelect }) {
     estimateSize: () => 330,
     overscan: 3,
   });
+
+  const filteredImages = useMemo(() => {
+    return totalImages.filter((image) => {
+      image;
+      // return image.year === filterOptions.year;
+    });
+  }, [totalImages]);
 
   return (
     <div className="h-10 flex-grow-1" ref={parentRef}>

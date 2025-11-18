@@ -106,8 +106,6 @@ export default function Statistics() {
 
   const statistics = getStatistics(totalImages, params);
 
-  console.log("statistics", statistics);
-
   return (
     <ul className={styles.container}>
       <li className={styles.item}>

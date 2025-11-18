@@ -1,29 +1,42 @@
-import styles from "./FilterOption.module.scss";
-import { ICONS } from "../../constants/config";
+import { useSearchParams } from "react-router-dom";
+import { ICONS, REFACT_ICONS } from "../../constants/config";
+import { parseSearchParamsToJson } from "../../utils";
 import ColorCircle from "../ColorCircle";
-import { useFilterStore } from "../../stores/filterState";
+import styles from "./FilterOption.module.scss";
 
 export default function FilterOption() {
-  const { filterOptions } = useFilterStore();
+  const [searchParams] = useSearchParams();
+  const params = parseSearchParamsToJson(searchParams);
+
+  const options = Object.entries(params).flatMap(([key, value]) => {
+    return value.split(",").map((v) => ({ key, value: v.trim() }));
+  });
+
+  console.log(options);
 
   return (
     <div className="flex items-center gap-2">
-      <span className={styles.filterYear}>{filterOptions?.year}</span>
-
-      {filterOptions?.type &&
-        (filterOptions?.type === "shape" || filterOptions?.type === "mood" ? (
-          <span className={styles.filterValue}>
-            {filterOptions?.value || ""}
-          </span>
-        ) : filterOptions?.type === "color" ? (
-          <ColorCircle size="md" color={filterOptions?.value || ""} />
-        ) : (
+      <span className="text-[24px] text-white">{params?.year}</span>
+      {options.map((option) => {
+        if (option.key === "colors")
+          return <ColorCircle size="md" color={option.value} />;
+        if (["shapes", "moods"].includes(option.key))
+          return (
+            <span
+              key={option.key}
+              className="text-white border border-white px-2 py-1"
+            >
+              {option.value}
+            </span>
+          );
+        return (
           <img
-            src={ICONS[filterOptions?.type || ""]?.[filterOptions?.value || ""]}
-            alt={String(filterOptions?.value).toLowerCase()}
+            src={REFACT_ICONS[option.key || ""]?.[option.value || ""]}
+            alt={String(option.value).toLowerCase()}
             className={styles.filterIcon}
           />
-        ))}
+        );
+      })}
     </div>
   );
 }

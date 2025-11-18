@@ -10,6 +10,6 @@ export default function ColorCircle({ color, size = "md" }) {
         size === "sm" && styles.sm,
         size === "lg" && styles.lg
       )}
-    ></span>
+    />
   );
 }
