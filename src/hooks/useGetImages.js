@@ -10,9 +10,9 @@ export const totalImages = Object.values(archives).flatMap(
 export default function useGetImages() {
   const [searchParams] = useSearchParams();
   const params = parseSearchParamsToJson(searchParams);
-
   return Object.values(archives).flatMap((archive) => {
     return archive.images.filter((image) => {
+console.log('image', image)
       if (!!params.year && params.year !== image.year) {
         return false;
       }
@@ -33,7 +33,7 @@ export default function useGetImages() {
       }
 
       if (
-        !params.moods ||
+        params.moods &&
         !params.moods
           .split(",")
           .some((value) => image["Mood Keyword"]?.includes(value.trim()))
