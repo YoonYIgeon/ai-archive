@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { totalImages } from "../../hooks/useGetImages";
+import useGetImages, { totalImages } from "../../hooks/useGetImages";
 import ColorCircle from "../ColorCircle";
 import FilterDetail from "../FilterDetail";
 import styles from "./FilterModal.module.scss";
@@ -96,37 +96,37 @@ const filterOptions = [
   {
     name: "COLOR",
     key: "colors",
-    multiple: false,
+    multiple: true,
     type: "default",
   },
   {
     name: "FORM",
     key: "forms",
-    multiple: false,
+    multiple: true,
     type: "default",
   },
   {
     name: "EMPHASIS",
     key: "emphases",
-    multiple: false,
+    multiple: true,
     type: "default",
   },
   {
     name: "BALANCE",
     key: "balances",
-    multiple: false,
+    multiple: true,
     type: "default",
   },
   {
     name: "CONTRAST",
     key: "contrasts",
-    multiple: false,
+    multiple: true,
     type: "default",
   },
   {
     name: "WHITE SPACE",
     key: "whitespaces",
-    multiple: false,
+    multiple: true,
     type: "default",
   },
 ];
@@ -198,6 +198,8 @@ export default function FilterModal({ open, onClose, statistics, years }) {
     );
   };
 
+  const images = useGetImages();
+
   return (
     <>
       <div
@@ -210,6 +212,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
             className={styles.closeIcon}
           />
         </button>
+        <p className="text-white">총 {images.length}개</p>
         <div className={"flex flex-col gap-5 py-2.5"}>
           <Title label="Year" onSeeAll={() => handleSeeAll("year")} />
           <ul className={styles.list}>
@@ -249,9 +252,15 @@ export default function FilterModal({ open, onClose, statistics, years }) {
                 .map(([keyword]) => (
                   <li
                     key={keyword}
+                    onClick={() => handleSelect(item, keyword)}
                     className={
                       item.key === "colors"
-                        ? styles.colorOption
+                        ? clsx(
+                            styles.colorOption,
+                            params[item.key]?.split(",")?.includes(keyword)
+                              ? ""
+                              : "opacity-50"
+                          )
                         : clsx(
                             styles.option,
                             params[item.key]?.split(",")?.includes(keyword)
@@ -263,7 +272,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
                     {item.key === "colors" ? (
                       <ColorCircle color={keyword} />
                     ) : (
-                      <button onClick={() => handleSelect(item, keyword)}>
+                      <button >
                         {keyword}
                       </button>
                     )}
