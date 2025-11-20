@@ -191,12 +191,13 @@ export default function FilterModal({ open, onClose, statistics, years }) {
       true
     );
   };
+  console.log('moods',Object.entries(options['moods']).sort(([,a], [,b]) => b - a).slice(0, 5).map(([v])=>v))
+  console.log('shapes',Object.entries(options['shapes']).sort(([,a], [,b]) => b - a).slice(0, 5).map(([v])=>v))
 
   return (
     <>
       <div
-        className={clsx(styles.container,
-           /* "border-t border-[#777777]", */ open ? styles.open : styles.close)}
+        className={clsx(styles.container, open ? styles.open : styles.close)}
       >
         <button className={styles.closeButton} onClick={handleClose}>
           <img

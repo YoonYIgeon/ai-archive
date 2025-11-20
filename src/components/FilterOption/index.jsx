@@ -3,6 +3,7 @@ import { ICONS, REFACT_ICONS } from "../../constants/config";
 import { parseSearchParamsToJson } from "../../utils";
 import ColorCircle from "../ColorCircle";
 import styles from "./FilterOption.module.scss";
+import Placeholder from "../Placeholder";
 
 export default function FilterOption() {
   const [searchParams] = useSearchParams();
@@ -14,7 +15,8 @@ export default function FilterOption() {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[24px] text-white">{params?.year}</span>
+      {options.length === 0 && <Placeholder/>}
+      {params.year && <span className="text-[24px] text-white">{params?.year}</span>}
       {options.map((option) => {
         if (option.key === "year") return null;
         if (option.key === "colors")

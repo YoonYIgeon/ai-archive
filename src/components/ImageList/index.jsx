@@ -23,7 +23,7 @@ export default function ImageList({ onSelect }) {
 
   return (
     <div className="h-10 flex-grow-1 flex flex-col gap-2">
-      <span className="px-4">총 {images.length}개</span>
+      <span className="px-4 opacity-50">Total {images.length}</span>
       <div className="h-10 px-4 flex-grow-1 overflow-auto" ref={parentRef}>
         {images.length === 0 ? (
           <div className={styles.empty}>
