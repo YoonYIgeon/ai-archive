@@ -12,7 +12,6 @@ export default function useGetImages() {
   const params = parseSearchParamsToJson(searchParams);
   return Object.values(archives).flatMap((archive) => {
     return archive.images.filter((image) => {
-console.log('image', image)
       if (!!params.year && params.year !== image.year) {
         return false;
       }

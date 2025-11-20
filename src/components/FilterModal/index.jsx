@@ -243,10 +243,10 @@ export default function FilterModal({ open, onClose, statistics, years }) {
             <ul
               className={item.key === "colors" ? styles.colorList : styles.list}
             >
-              {Object.keys(options[item.key] || {})
-                .sort()
+              {Object.entries(options[item.key] || {})
+                .sort(([,a], [,b]) => a === b ? 0 : a > b ? -1 : 1)
                 .slice(0, 10)
-                .map((keyword) => (
+                .map(([keyword]) => (
                   <li
                     key={keyword}
                     className={
