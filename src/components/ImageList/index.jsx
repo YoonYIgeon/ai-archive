@@ -2,6 +2,7 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import { useRef } from "react";
 import useGetImages from "../../hooks/useGetImages";
 import styles from "./ImageList.module.scss";
+import clsx from "clsx";
 
 export default function ImageList({ onSelect }) {
   const parentRef = useRef(null);
@@ -59,13 +60,13 @@ export default function ImageList({ onSelect }) {
                   {rowItems.map((item, itemIndex) => (
                     <div
                       key={`${item.id}-${startIndex + itemIndex}`}
-                      className={styles.item}
+                      className={clsx(styles.item, "bg-black")}
                     >
                       <img
                         loading="lazy"
                         src={`/archives/${item.file_name.replace("#", "")}`}
                         alt={item.name}
-                        className={styles.image}
+                        className={clsx(styles.image, 'bg-black')}
                         onClick={() => onSelect(item)}
                       />
                     </div>
