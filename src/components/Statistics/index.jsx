@@ -63,7 +63,7 @@ const getStatistics = (images) => {
 };
 
 export default function Statistics() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const params = parseSearchParamsToJson(searchParams);
   const images = useGetImages();
 

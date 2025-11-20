@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import useGetImages, { totalImages } from "../../hooks/useGetImages";
+import { totalImages } from "../../hooks/useGetImages";
+import { parseSearchParamsToJson, trimArray } from "../../utils";
 import ColorCircle from "../ColorCircle";
 import FilterDetail from "../FilterDetail";
 import styles from "./FilterModal.module.scss";
-import { trimArray, parseSearchParamsToJson } from "../../utils";
+import SeeAllButton from "../SeeAllButton";
 
 const getOptions = (images, year) => {
   return images.reduce(
@@ -132,9 +133,6 @@ const filterOptions = [
 ];
 
 export default function FilterModal({ open, onClose, statistics, years }) {
-  const [isOpenFilterDetailModal, setIsOpenFilterDetailModal] = useState(false);
-  const [selectedDetailOption, setSelectedDetailOption] = useState("");
-
   const [searchParams, setSearchParams] = useSearchParams();
   const params = parseSearchParamsToJson(searchParams);
 
@@ -151,10 +149,6 @@ export default function FilterModal({ open, onClose, statistics, years }) {
     ];
   }, [statistics, years]);
 
-  const handleSeeAll = (option) => {
-    setIsOpenFilterDetailModal(true);
-    setSelectedDetailOption(option);
-  };
 
   const handleClose = () => {
     onClose();
@@ -211,7 +205,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
           />
         </button>
         <div className={"flex flex-col gap-5 py-2.5"}>
-          <Title label="Year" onSeeAll={() => handleSeeAll("year")} />
+          <Title label="Year" type='year' />
           <ul className={styles.list}>
             {yearList.map(({ keyword, value }) => (
               <li
@@ -238,7 +232,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
             <Title
               count={Object.keys(options[item.key] || {}).length}
               label={item.name}
-              onSeeAll={() => handleSeeAll(item.key)}
+              type={item.key}
             />
             <ul
               className={item.key === "colors" ? styles.colorList : styles.list}
@@ -279,25 +273,15 @@ export default function FilterModal({ open, onClose, statistics, years }) {
           </div>
         ))}
       </div>
-      {isOpenFilterDetailModal && (
-        <FilterDetail
-          option={selectedDetailOption}
-          onClose={() => setIsOpenFilterDetailModal(false)}
-        />
-      )}
     </>
   );
 }
-const Title = ({ label, count, onSeeAll }) => {
+const Title = ({ label, count, type }) => {
   return (
     <div className={styles.title}>
       {label}
       {count > 0 && <span className="ml-2">({count})</span>}
-      {count > 10 && (
-        <button className={styles.seeAllButton} onClick={() => onSeeAll(label)}>
-          See All
-        </button>
-      )}
+      <SeeAllButton type={type} />
     </div>
   );
 };

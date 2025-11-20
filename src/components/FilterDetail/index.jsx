@@ -1,15 +1,17 @@
-import styles from "./FilterDetail.module.scss";
-import archivesData from "../../datas/archives.json";
-import { useEffect, useState } from "react";
-import ColorCircle from "../ColorCircle";
 import clsx from "clsx";
-import { ICONS } from "../../constants/config";
+import { useEffect, useState } from "react";
+import { ICONS, REFACT_ICONS } from "../../constants/config";
 import useGetFilterDetail from "../../hooks/useGetFilterDetail";
+import ColorCircle from "../ColorCircle";
+import styles from "./FilterDetail.module.scss";
+import { useSearchParams } from "react-router-dom";
+
+const getPercentage = (value, total) => {
+  return total > 0 ? Math.round((value / total) * 100) : 0;
+}
 
 export default function FilterDetail({ option, onClose }) {
   const [isOpen, setIsOpen] = useState(false);
-  const allArchives = { all: { id: 0, name: "ALL" }, ...archivesData };
-  const [archive, setArchive] = useState("all");
 
   useEffect(() => {
     if (option) {
@@ -17,19 +19,14 @@ export default function FilterDetail({ option, onClose }) {
     }
   }, [option]);
 
-  const handleSelectArchive = (archive) => {
-    setArchive(archive);
-  };
-
   const handleClose = () => {
     setIsOpen(false);
     setTimeout(() => {
       onClose();
-      setArchive("all");
     }, 500);
   };
 
-  const data = useGetFilterDetail(option, archive);
+  const data = useGetFilterDetail(option);
 
   return (
     <div
@@ -39,25 +36,14 @@ export default function FilterDetail({ option, onClose }) {
         !isOpen && styles.close
       )}
     >
+      {/* 뒤로가기 */}
       <button className={styles.backButton} onClick={handleClose}>
         <img src="/images/icon_back.png" alt="back" />
       </button>
-      <ul className={styles.archiveList}>
-        {Object.keys(allArchives).map((item, index) => (
-          <li key={index}>
-            <button
-              onClick={() => handleSelectArchive(item)}
-              className={archive === item ? styles.selected : ""}
-            >
-              {allArchives[item]?.name}
-            </button>
-          </li>
-        ))}
-      </ul>
       <div className={styles.optionContainer}>
         <p className={styles.optionTitle}>{option.toUpperCase()}</p>
-        {option === "Shape" || option === "Mood" ? (
-          <List data={data || []} />
+        {option === "shapes" || option === "moods" ? (
+          <List option={option} data={data || []} />
         ) : (
           <TableList option={option} data={data || []} />
         )}
@@ -72,116 +58,81 @@ const TableList = ({ option, data }) => {
     return <div>데이터가 없습니다.</div>;
   }
 
-  // 데이터를 테이블 형태로 변환
-  const transformDataForTable = (data) => {
-    const years = Object.keys(data).sort((a, b) => b - a); // 연도 내림차순 정렬
-    const allKeywords = new Set();
-
-    // 모든 키워드 수집 (순서 유지를 위해 첫 번째 연도의 순서를 기준으로)
-    const firstYearData = data[years[0]] || [];
-    firstYearData.forEach((item) => {
-      allKeywords.add(item.keyword);
-    });
-
-    // 나머지 연도에서 누락된 키워드 추가
-    years.forEach((year) => {
-      data[year]?.forEach((item) => {
-        allKeywords.add(item.keyword);
-      });
-    });
-
-    // 키워드별로 연도별 데이터 매핑 (빈도수와 퍼센트 모두)
-    const tableData = Array.from(allKeywords).map((keyword) => {
-      const yearData = {};
-      years.forEach((year) => {
-        const item = data[year]?.find((item) => item.keyword === keyword);
-        yearData[year] = item
-          ? {
-              frequency: item.frequency,
-              percentage: item.percentage,
-            }
-          : {
-              frequency: "None",
-              percentage: "0.0%",
-            };
-      });
-      return {
-        keyword,
-        yearData,
-      };
-    });
-
-    return { years, tableData };
+  const orderMap = {
+    contrasts: ["High", "Medium", "Low"],
+    balances: ["Symmetric", "Asymmetric", "Radial"],
+    whitespaces: ["High", "Medium", "Low"],
+    forms: ["2D", "3D", "Photo"],
+    emphases: ["Center", "Top", "Bottom", "Left", "Right"],
+    colors: ["Red","Orange","Yellow","Green","Blue","Purple","Monochrome"
+    ],
   };
+  const order = orderMap[option];
 
-  const { years, tableData } = transformDataForTable(data);
 
   return (
     <div>
       {/* 연도 헤더 */}
-      <ul className={styles.yearList}>
-        {years.map((year) => (
-          <li key={year}>
-            <p className={styles.year}>{year}</p>
-          </li>
-        ))}
-      </ul>
-
-      {/* 테이블 데이터 */}
-      <ul className={styles.table}>
-        {tableData.map((item, listIndex) => {
-          const { keyword, yearData } = item;
-          return (
-            <li key={listIndex} className={styles.tableItem}>
-              {option === "color" ? (
+      <div className='flex gap-10'>
+        <div className='flex flex-col gap-10'>
+          <div className="h-9"/>
+          {order.map((name) => (
+            <div key={name} className="min-h-14 max-h-14">
+              {option === "colors" ? (
                 <span className={styles.colorCircle}>
-                  <ColorCircle color={keyword} />
+                  <ColorCircle color={name} />
                 </span>
               ) : (
                 <div className={styles.imageContainer}>
                   <img
-                    src={ICONS[option][keyword]}
-                    alt={keyword}
+                    src={REFACT_ICONS[option][name]}
+                    alt={name}
                     className={styles.image}
                   />
-                  <p>{keyword}</p>
+                  <p>{name}</p>
                 </div>
               )}
-              <div className={styles.valueList}>
-                {years.map((year) => (
-                  <div
-                    key={year}
-                    className={clsx(
-                      styles.valueContainer,
-                      yearData[year].frequency === "None" && styles.none
-                    )}
-                  >
-                    <p className={styles.value}>{yearData[year].frequency}</p>
-                    <p className={styles.percent}>
-                      {yearData[year].percentage}
-                    </p>
-                  </div>
-                ))}
+            </div>
+          ))}
+        </div>
+        {Object.keys(data).sort((a, b) => b - a).map((year) => {
+          const yearData = data[year];
+          const total = Object.values(yearData).reduce((acc, curr) => acc + curr, 0);
+
+          return (
+            <div className='flex flex-col gap-10 h-9'>
+              <div key={year} className="h-9">
+                <p className={styles.year}>{year}</p>
               </div>
-            </li>
-          );
-        })}
-      </ul>
+              {order.map((name) => (
+                <div key={name} className={clsx("min-h-14 flex flex-col justify-center items-end", data[year][name] ? '':'opacity-50')} >
+                  <p className={styles.value }>{data[year][name] || "None"}</p>
+                  <p className='text-xs'>{getPercentage(data[year][name] || 0, total)}%</p>
+                </div>
+              ))}
+            </div>
+          )})}
+      </div>
     </div>
   );
 };
 
-const List = ({ data }) => {
+const List = ({option, data }) => {
+  const [, setSearchParams] = useSearchParams();
   return (
     <div className={styles.dataContainer}>
-      {Object.keys(data)?.map((year, index) => (
-        <div key={index}>
+      {Object.keys(data)?.map((year) => (
+        <div key={year}>
           <p className={styles.year}>{year}</p>
           <ul className={styles.dataList}>
-            {data?.[year]?.map((item, listIndex) => (
-              <li key={`${listIndex}-${item.name}`}>
-                <span className={styles.name}>{item?.keyword}</span>
-                <span className={styles.value}>{item?.frequency}</span>
+            {Object.entries(data?.[year])?.sort(([,a], [,b]) => b - a).map(([name, count]) => (
+              <li key={name} className='cursor-pointer' onClick={() => {
+                setSearchParams((prev) => {
+                  return {year, [option]: name};
+                });
+              }}>
+                <span className={styles.name}>{name}</span>
+                <span className={styles.value}>{count}</span>
               </li>
             ))}
           </ul>
