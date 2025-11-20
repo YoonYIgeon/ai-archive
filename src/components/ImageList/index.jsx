@@ -21,59 +21,61 @@ export default function ImageList({ onSelect }) {
   });
 
   return (
-    <div className="h-10 px-4 flex-grow-1" ref={parentRef}>
-      총 {images.length}개
-      {images.length === 0 ? (
-        <div className={styles.empty}>
-          <p>목록이 없습니다.</p>
-        </div>
-      ) : (
-        <div
-          className={styles.list}
-          style={{
-            height: `${virtualizedList.getTotalSize()}px`,
-            width: "100%",
-            position: "relative",
-          }}
-        >
-          {virtualizedList.getVirtualItems().map((virtualRow) => {
-            const startIndex = virtualRow.index * itemsPerRow;
-            const endIndex = Math.min(startIndex + itemsPerRow, images.length);
-            const rowItems = images.slice(startIndex, endIndex);
+    <div className="h-10 flex-grow-1 flex flex-col gap-2">
+      <span className="px-4">총 {images.length}개</span>
+      <div className="h-10 px-4 flex-grow-1 overflow-auto" ref={parentRef}>
+        {images.length === 0 ? (
+          <div className={styles.empty}>
+            <p>목록이 없습니다.</p>
+          </div>
+        ) : (
+          <div
+            className={styles.list}
+            style={{
+              height: `${virtualizedList.getTotalSize()}px`,
+              width: "100%",
+              position: "relative",
+            }}
+          >
+            {virtualizedList.getVirtualItems().map((virtualRow) => {
+              const startIndex = virtualRow.index * itemsPerRow;
+              const endIndex = Math.min(startIndex + itemsPerRow, images.length);
+              const rowItems = images.slice(startIndex, endIndex);
 
-            return (
-              <div
-                key={virtualRow.index}
-                className={styles.row}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "320px",
-                  transform: `translateY(${virtualRow.start}px)`,
-                }}
-                ref={virtualizedList.measureElement}
-              >
-                {rowItems.map((item, itemIndex) => (
-                  <div
-                    key={`${item.id}-${startIndex + itemIndex}`}
-                    className={styles.item}
-                  >
-                    <img
-                      loading="lazy"
-                      src={`/archives/${item.file_name.replace("#", "")}`}
-                      alt={item.name}
-                      className={styles.image}
-                      onClick={() => onSelect(item)}
-                    />
-                  </div>
-                ))}
-              </div>
-            );
-          })}
-        </div>
-      )}
+              return (
+                <div
+                  key={virtualRow.index}
+                  className={styles.row}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "320px",
+                    transform: `translateY(${virtualRow.start}px)`,
+                  }}
+                  ref={virtualizedList.measureElement}
+                >
+                  {rowItems.map((item, itemIndex) => (
+                    <div
+                      key={`${item.id}-${startIndex + itemIndex}`}
+                      className={styles.item}
+                    >
+                      <img
+                        loading="lazy"
+                        src={`/archives/${item.file_name.replace("#", "")}`}
+                        alt={item.name}
+                        className={styles.image}
+                        onClick={() => onSelect(item)}
+                      />
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
