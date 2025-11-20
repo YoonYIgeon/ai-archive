@@ -21,7 +21,7 @@ export default function ImageList({ onSelect }) {
   });
 
   return (
-    <div className="h-10 flex-grow-1" ref={parentRef}>
+    <div className="h-10 px-4 flex-grow-1" ref={parentRef}>
       총 {images.length}개
       {images.length === 0 ? (
         <div className={styles.empty}>

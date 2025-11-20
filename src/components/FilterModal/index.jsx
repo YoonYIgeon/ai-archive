@@ -196,7 +196,7 @@ export default function FilterModal({ open, onClose, statistics, years }) {
     <>
       <div
         className={clsx(styles.container,
-           "border-t border-[#777777]", open ? styles.open : styles.close)}
+           /* "border-t border-[#777777]", */ open ? styles.open : styles.close)}
       >
         <button className={styles.closeButton} onClick={handleClose}>
           <img
