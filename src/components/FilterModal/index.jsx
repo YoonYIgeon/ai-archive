@@ -198,8 +198,6 @@ export default function FilterModal({ open, onClose, statistics, years }) {
     );
   };
 
-  const images = useGetImages();
-
   return (
     <>
       <div
@@ -212,7 +210,6 @@ export default function FilterModal({ open, onClose, statistics, years }) {
             className={styles.closeIcon}
           />
         </button>
-        <p className="text-white">총 {images.length}개</p>
         <div className={"flex flex-col gap-5 py-2.5"}>
           <Title label="Year" onSeeAll={() => handleSeeAll("year")} />
           <ul className={styles.list}>
