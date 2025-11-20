@@ -30,14 +30,15 @@ export default function FilterDetail({ open, option, onClose }) {
         {option === "shapes" || option === "moods" ? (
           <List option={option} data={data || []} onClose={onClose} />
         ) : (
-          <TableList option={option} data={data || []} />
+          <TableList option={option} data={data || []} onClose={onClose} />
         )}
       </div>
     </div>
   );
 }
 
-const TableList = ({ option, data }) => {
+const TableList = ({ option, data, onClose }) => {
+  const [, setSearchParams] = useSearchParams();
   // data가 객체 형태이므로 연도별로 처리
   if (!data || Object.keys(data).length === 0) {
     return <div>데이터가 없습니다.</div>;
@@ -62,11 +63,9 @@ const TableList = ({ option, data }) => {
         <div className='flex flex-col gap-10'>
           <div className="h-9"/>
           {order.map((name) => (
-            <div key={name} className="min-h-14 max-h-14">
+            <div key={name} className="min-h-14 max-h-14 flex items-center justify-center">
               {option === "colors" ? (
-                <span className={styles.colorCircle}>
-                  <ColorCircle color={name} />
-                </span>
+                <ColorCircle color={name} />
               ) : (
                 <div className={styles.imageContainer}>
                   <img
@@ -90,7 +89,12 @@ const TableList = ({ option, data }) => {
                 <p className={styles.year}>{year}</p>
               </div>
               {order.map((name) => (
-                <div key={name} className={clsx("min-h-14 flex flex-col justify-center items-end", data[year][name] ? '':'opacity-50')} >
+                <div key={name} className={clsx("min-h-14 flex flex-col justify-center items-end cursor-pointer", data[year][name] ? '':'opacity-50')} 
+                onClick={() => {
+                  setSearchParams({year, [option]: name});
+                  onClose();
+                }}
+                >
                   <p className={styles.value }>{data[year][name] || "None"}</p>
                   <p className='text-xs'>{getPercentage(data[year][name] || 0, total)}%</p>
                 </div>

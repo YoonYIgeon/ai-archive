@@ -34,7 +34,6 @@ export default function ImageList({ onSelect }) {
             className={styles.list}
             style={{
               height: `${virtualizedList.getTotalSize()}px`,
-              width: "100%",
               position: "relative",
             }}
           >
