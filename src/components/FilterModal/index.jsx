@@ -278,9 +278,9 @@ export default function FilterModal({ open, onClose, statistics, years }) {
 }
 const Title = ({ label, count, type }) => {
   return (
-    <div className={styles.title}>
+    <div className={clsx(styles.title, 'flex gap-3')}>
       {label}
-      {count > 0 && <span className="ml-2">({count})</span>}
+      {count > 0 && <span>({count})</span>}
       {type !== 'year' && <SeeAllButton type={type} />}
     </div>
   );

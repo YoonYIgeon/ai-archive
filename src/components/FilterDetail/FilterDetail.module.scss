@@ -7,12 +7,12 @@
   padding: 10px;
   box-sizing: border-box;
   z-index: 999;
-  height: 100%;
+  height: calc(100dvh - 40px);
   &.open {
-    animation: slideUp 0.5s ease-in-out forwards;
+    animation: slideUp 0.2s ease-in-out forwards;
   }
   &.close {
-    animation: slideDown 0.5s ease-in-out forwards;
+    animation: slideDown 0.2s ease-in-out forwards;
   }
 }
 .colorCircle {

@@ -1,49 +1,34 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
-import { ICONS, REFACT_ICONS } from "../../constants/config";
+import { useSearchParams } from "react-router-dom";
+import { REFACT_ICONS } from "../../constants/config";
 import useGetFilterDetail from "../../hooks/useGetFilterDetail";
 import ColorCircle from "../ColorCircle";
 import styles from "./FilterDetail.module.scss";
-import { useSearchParams } from "react-router-dom";
 
 const getPercentage = (value, total) => {
   return total > 0 ? Math.round((value / total) * 100) : 0;
 }
 
-export default function FilterDetail({ option, onClose }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (option) {
-      setIsOpen(true);
-    }
-  }, [option]);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    setTimeout(() => {
-      onClose();
-    }, 500);
-  };
-
+export default function FilterDetail({ open, option, onClose }) {
   const data = useGetFilterDetail(option);
+
+  if(!open) return null;
 
   return (
     <div
       className={clsx(
         styles.container,
-        isOpen && styles.open,
-        !isOpen && styles.close
+        open ? styles.open : styles.close,
       )}
     >
       {/* 뒤로가기 */}
-      <button className={styles.backButton} onClick={handleClose}>
+      <button className={styles.backButton} onClick={onClose}>
         <img src="/images/icon_back.png" alt="back" />
       </button>
       <div className={styles.optionContainer}>
         <p className={styles.optionTitle}>{option.toUpperCase()}</p>
         {option === "shapes" || option === "moods" ? (
-          <List option={option} data={data || []} />
+          <List option={option} data={data || []} onClose={onClose} />
         ) : (
           <TableList option={option} data={data || []} />
         )}
@@ -117,7 +102,7 @@ const TableList = ({ option, data }) => {
   );
 };
 
-const List = ({option, data }) => {
+const List = ({ option, data, onClose }) => {
   const [, setSearchParams] = useSearchParams();
   return (
     <div className={styles.dataContainer}>
@@ -127,9 +112,8 @@ const List = ({option, data }) => {
           <ul className={styles.dataList}>
             {Object.entries(data?.[year])?.sort(([,a], [,b]) => b - a).map(([name, count]) => (
               <li key={name} className='cursor-pointer' onClick={() => {
-                setSearchParams((prev) => {
-                  return {year, [option]: name};
-                });
+                setSearchParams({year, [option]: name});
+                onClose();
               }}>
                 <span className={styles.name}>{name}</span>
                 <span className={styles.value}>{count}</span>

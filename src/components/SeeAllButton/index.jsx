@@ -7,17 +7,15 @@ const SeeAllButton = ({ type }) => {
     <>
       <button 
         onClick={() => setOpen(true)}
-        style={{
-          fontSize: '16px',
-          color: '#a9a9a9',
-          marginLeft: "10px"
-        }}>
+        className="text-[#a9a9a9]"
+      >
         See All
       </button>
-      {open && <FilterDetail
+      <FilterDetail
+        open={open}
         option={type}
         onClose={() => setOpen(false)}
-      />}
+      />
     </>
   );
 };
