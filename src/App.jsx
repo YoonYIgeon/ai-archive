@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import styles from "./App.module.scss";
 import FilterButton from "./components/FilterButton";
 import FilterOption from "./components/FilterOption";
@@ -7,28 +6,13 @@ import Header from "./components/Header";
 import ImageDetailModal from "./components/ImageDetailModal";
 import ImageList from "./components/ImageList";
 import Statistics from "./components/Statistics";
-import useStatistics from "./hooks/useStatistics";
-import { useFilterStore } from "./stores/filterState";
-import { parseSearchParamsToJson } from "./utils";
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const { setFilterOptions } = useFilterStore();
-  const { statistics } = useStatistics();
-
-  const [searchParams] = useSearchParams();
 
   const handleSelectImage = (image) => {
     setSelectedImage(image);
   };
-
-  const { year } = parseSearchParamsToJson(searchParams);
-
-  useEffect(() => {
-    // 초기화 이후 로직
-    setFilterOptions({ year, type: null, value: null });
-  }, [year, setFilterOptions]);
-
   return (
     <div className={"flex flex-col"}>
       {/* 최상위 헤더 */}
@@ -42,7 +26,7 @@ function App() {
           <ImageList onSelect={handleSelectImage} />
         </div>
         <div className={styles.sidebar}>
-          <Statistics statistics={statistics} />
+          <Statistics />
           {selectedImage && (
             <ImageDetailModal
               image={selectedImage}
