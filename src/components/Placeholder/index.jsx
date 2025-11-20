@@ -24,7 +24,7 @@ export default function Placeholder() {
   return (
     <div className="flex flex-col justify-center gap-2">
       <span className="text-white opacity-50">Tag Recommendation</span>
-      <ul className={'flex gap-2'}>
+      <ul className={'flex gap-2 flex-wrap'}>
             {[...topMoods, ...topShapes].map(({ type, keyword }) => (
               <li
                 key={keyword}

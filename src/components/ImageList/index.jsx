@@ -26,8 +26,8 @@ export default function ImageList({ onSelect }) {
       <span className="px-4 opacity-50">Total {images.length}</span>
       <div className="h-10 px-4 flex-grow-1 overflow-auto" ref={parentRef}>
         {images.length === 0 ? (
-          <div className={styles.empty}>
-            <p>목록이 없습니다.</p>
+          <div className={'text-sm opacity-50 text-center py-20'}>
+            <p>No Data.</p>
           </div>
         ) : (
           <div
