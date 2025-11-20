@@ -281,7 +281,7 @@ const Title = ({ label, count, type }) => {
     <div className={styles.title}>
       {label}
       {count > 0 && <span className="ml-2">({count})</span>}
-      <SeeAllButton type={type} />
+      {type !== 'year' && <SeeAllButton type={type} />}
     </div>
   );
 };
